@@ -30,7 +30,7 @@ Registration Number : 212222240072
 
 ## Get the input String:
 ```
-string=input("Enter a string")
+string=input("Pooja A 212222240072")
 class NodeTree(object):
   def __init__(self,left=None,right=None):
     self.left=left
@@ -41,14 +41,14 @@ class NodeTree(object):
     
 ## Create tree nodes:
 ```
-def huffman_code(Node,left=True,binstring=''):
-  if type(Node) is str:
-    return {Node: binstring}
-  (l,r) = Node.children()
-  d=dict()
-  d.update(huffman_code(l,True,binstring + '0'))
-  d.update(huffman_code(r,False,binstring + '1'))
-  return d
+def huffman_code_tree(node, left=True, binString=''):
+    if type(node) is str:
+        return {node: binString}
+    (l, r) = node.children()
+    d = dict()
+    d.update(huffman_code_tree(l, True, binString + '0'))
+    d.update(huffman_code_tree(r, False, binString + '1'))
+    return d
 ```
 
 ## Main function to implement huffman coding:
@@ -76,14 +76,15 @@ while len(Nodes) >1:
 
 ## Print the characters and its huffmancode:
 ```
-huffmancode=huffman_code(Nodes[0][0])
-print('Char | Code')
-for (char,frequency) in freq:
-  print('%-4r |%12s' % (char, huffmancode[char]))
+huffmanCode = huffman_code_tree(nodes[0][0])
+print(' Char | Huffman code ')
+print('----------------------')
+for (char, frequency) in freq:
+    print(' %-4r |%12s' % (char, huffmanCode[char]))
 ```
 
 ## Output:
-![image](https://github.com/poojaanbu0/HUFFMAN-CODING-/assets/119390329/1f151043-5337-4af7-bd1d-3db0ce779c64)
+![exp 12 out](https://github.com/poojaanbu0/HUFFMAN-CODING-/assets/119390329/83028481-1cc8-4ac8-8b85-f5c78bd6b424)
 
 ## Result:
 Thus, the huffman coding was implemented to compress the data using python programming.

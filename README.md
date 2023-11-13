@@ -40,7 +40,7 @@ class NodeTree(object):
 ```    
     
 ## Create tree nodes:
-```
+```python
 def huffman_code_tree(node, left=True, binString=''):
     if type(node) is str:
         return {node: binString}
@@ -52,7 +52,7 @@ def huffman_code_tree(node, left=True, binString=''):
 ```
 
 ## Main function to implement huffman coding:
-```
+```python
 freq={}
 for c in string:
   if c in freq:
@@ -64,7 +64,7 @@ Nodes=freq
 ```
 
 ## Calculate frequency of occurrence:
-```
+```python
 while len(Nodes) >1:
   (key1,c1) =Nodes[-1]
   (key2,c2) =Nodes[-2]
@@ -75,7 +75,7 @@ while len(Nodes) >1:
 ```
 
 ## Print the characters and its huffmancode:
-```
+```python
 huffmanCode = huffman_code_tree(nodes[0][0])
 print(' Char | Huffman code ')
 print('----------------------')

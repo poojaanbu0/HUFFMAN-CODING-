@@ -29,7 +29,7 @@ Registration Number : 212222240072
 ```
 
 ## Get the input String:
-```
+```python
 string=input("Pooja A 212222240072")
 class NodeTree(object):
   def __init__(self,left=None,right=None):
